@@ -129,5 +129,9 @@ namespace ShimView {
         private void useImageFilterToolStripMenuItem_Click(object sender, EventArgs e) {
             Invalidate();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+            MessageBox.Show(this, Program.AboutInfo, Program.Name);
+        }
     }
 }

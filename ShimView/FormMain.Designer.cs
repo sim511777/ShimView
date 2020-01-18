@@ -30,6 +30,8 @@
             this.resetZoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useImageFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,15 +41,17 @@
             this.openFileToolStripMenuItem,
             this.pasteImageToolStripMenuItem,
             this.resetZoomToolStripMenuItem,
-            this.useImageFilterToolStripMenuItem});
+            this.useImageFilterToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.aboutToolStripMenuItem});
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(201, 114);
+            this.menu.Size = new System.Drawing.Size(201, 142);
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.openFileToolStripMenuItem.Text = "Open File";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
@@ -55,7 +59,7 @@
             // 
             this.pasteImageToolStripMenuItem.Name = "pasteImageToolStripMenuItem";
             this.pasteImageToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteImageToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.pasteImageToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.pasteImageToolStripMenuItem.Text = "Paste Image";
             this.pasteImageToolStripMenuItem.Click += new System.EventHandler(this.pasteImageToolStripMenuItem_Click);
             // 
@@ -63,7 +67,7 @@
             // 
             this.resetZoomToolStripMenuItem.Name = "resetZoomToolStripMenuItem";
             this.resetZoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.resetZoomToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.resetZoomToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.resetZoomToolStripMenuItem.Text = "Reset Zoom";
             this.resetZoomToolStripMenuItem.Click += new System.EventHandler(this.resetZoomToolStripMenuItem_Click);
             // 
@@ -81,6 +85,18 @@
             // dlgOpen
             // 
             this.dlgOpen.FileName = "openFileDialog1";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -112,6 +128,8 @@
         private System.Windows.Forms.ToolStripMenuItem resetZoomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem useImageFilterToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog dlgOpen;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
