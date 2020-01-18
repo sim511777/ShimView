@@ -29,6 +29,7 @@
             this.pasteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetZoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useImageFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,25 +41,28 @@
             this.resetZoomToolStripMenuItem,
             this.useImageFilterToolStripMenuItem});
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(181, 114);
+            this.menu.Size = new System.Drawing.Size(161, 92);
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.openFileToolStripMenuItem.Text = "Open File";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
             // pasteImageToolStripMenuItem
             // 
             this.pasteImageToolStripMenuItem.Name = "pasteImageToolStripMenuItem";
-            this.pasteImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pasteImageToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.pasteImageToolStripMenuItem.Text = "Paste Image";
+            this.pasteImageToolStripMenuItem.Click += new System.EventHandler(this.pasteImageToolStripMenuItem_Click);
             // 
             // resetZoomToolStripMenuItem
             // 
             this.resetZoomToolStripMenuItem.Name = "resetZoomToolStripMenuItem";
-            this.resetZoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetZoomToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.resetZoomToolStripMenuItem.Text = "Reset Zoom";
+            this.resetZoomToolStripMenuItem.Click += new System.EventHandler(this.resetZoomToolStripMenuItem_Click);
             // 
             // useImageFilterToolStripMenuItem
             // 
@@ -66,8 +70,13 @@
             this.useImageFilterToolStripMenuItem.CheckOnClick = true;
             this.useImageFilterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.useImageFilterToolStripMenuItem.Name = "useImageFilterToolStripMenuItem";
-            this.useImageFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.useImageFilterToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.useImageFilterToolStripMenuItem.Text = "Use Image Filter";
+            this.useImageFilterToolStripMenuItem.Click += new System.EventHandler(this.useImageFilterToolStripMenuItem_Click);
+            // 
+            // dlgOpen
+            // 
+            this.dlgOpen.FileName = "openFileDialog1";
             // 
             // FormMain
             // 
@@ -99,6 +108,7 @@
         private System.Windows.Forms.ToolStripMenuItem pasteImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetZoomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem useImageFilterToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog dlgOpen;
     }
 }
 

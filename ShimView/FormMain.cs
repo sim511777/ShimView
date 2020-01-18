@@ -105,5 +105,26 @@ namespace ShimView {
                 Invalidate();
             } catch {}
         }
+
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (dlgOpen.ShowDialog(this) != DialogResult.OK)
+                return;
+            try {
+                img = Image.FromFile(dlgOpen.FileName);
+                Invalidate();
+            } catch {}
+        }
+
+        private void pasteImageToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void resetZoomToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void useImageFilterToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
     }
 }
