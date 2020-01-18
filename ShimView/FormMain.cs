@@ -26,11 +26,31 @@ namespace ShimView {
             Invalidate();
         }
 
+        Point ptPanninng = Point.Empty;
         private void FormMain_Paint(object sender, PaintEventArgs e) {
             if (img == null)
                 return;
 
-            e.Graphics.DrawImage(img, 0, 0);
+            e.Graphics.DrawImage(img, ptPanninng);
+        }
+
+        bool mouseDown = false;
+        private void FormMain_MouseDown(object sender, MouseEventArgs e) {
+            mouseDown = true;
+        }
+
+        private void FormMain_MouseUp(object sender, MouseEventArgs e) {
+            mouseDown = false;
+        }
+
+        Point ptOld = Point.Empty;
+        private void FormMain_MouseMove(object sender, MouseEventArgs e) {
+            var ptNow = e.Location;
+            if (mouseDown) {
+                ptPanninng += ((Size)ptNow - (Size)ptOld);
+                Invalidate();
+            }
+            ptOld = ptNow;
         }
     }
 }
