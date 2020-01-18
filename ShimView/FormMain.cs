@@ -25,5 +25,12 @@ namespace ShimView {
 
             Invalidate();
         }
+
+        private void FormMain_Paint(object sender, PaintEventArgs e) {
+            if (img == null)
+                return;
+
+            e.Graphics.DrawImage(img, 0, 0);
+        }
     }
 }
