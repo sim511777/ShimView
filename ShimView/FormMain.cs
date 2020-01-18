@@ -36,11 +36,13 @@ namespace ShimView {
 
         bool mouseDown = false;
         private void FormMain_MouseDown(object sender, MouseEventArgs e) {
-            mouseDown = true;
+            if (e.Button == MouseButtons.Left)
+                mouseDown = true;
         }
 
         private void FormMain_MouseUp(object sender, MouseEventArgs e) {
-            mouseDown = false;
+            if (e.Button == MouseButtons.Left)
+                mouseDown = false;
         }
 
         Point ptOld = Point.Empty;
