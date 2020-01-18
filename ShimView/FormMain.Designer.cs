@@ -23,7 +23,51 @@
         /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetZoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.useImageFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFileToolStripMenuItem,
+            this.pasteImageToolStripMenuItem,
+            this.resetZoomToolStripMenuItem,
+            this.useImageFilterToolStripMenuItem});
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(181, 114);
+            // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openFileToolStripMenuItem.Text = "Open File";
+            // 
+            // pasteImageToolStripMenuItem
+            // 
+            this.pasteImageToolStripMenuItem.Name = "pasteImageToolStripMenuItem";
+            this.pasteImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pasteImageToolStripMenuItem.Text = "Paste Image";
+            // 
+            // resetZoomToolStripMenuItem
+            // 
+            this.resetZoomToolStripMenuItem.Name = "resetZoomToolStripMenuItem";
+            this.resetZoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetZoomToolStripMenuItem.Text = "Reset Zoom";
+            // 
+            // useImageFilterToolStripMenuItem
+            // 
+            this.useImageFilterToolStripMenuItem.Checked = true;
+            this.useImageFilterToolStripMenuItem.CheckOnClick = true;
+            this.useImageFilterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useImageFilterToolStripMenuItem.Name = "useImageFilterToolStripMenuItem";
+            this.useImageFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.useImageFilterToolStripMenuItem.Text = "Use Image Filter";
             // 
             // FormMain
             // 
@@ -32,6 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ContextMenuStrip = this.menu;
             this.DoubleBuffered = true;
             this.Name = "FormMain";
             this.Text = "Shim View";
@@ -42,11 +87,18 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseUp);
+            this.menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetZoomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem useImageFilterToolStripMenuItem;
     }
 }
 
