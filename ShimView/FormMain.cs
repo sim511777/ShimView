@@ -81,18 +81,6 @@ namespace ShimView {
             ptOld = ptNow;
         }
 
-        private void FormMain_KeyDown(object sender, KeyEventArgs e) {
-            if (e.Modifiers != Keys.Control | e.KeyCode != Keys.V)
-                return;
-
-            var imgOld = Clipboard.GetImage();
-            if (imgOld == null)
-                return;
-
-            img = imgOld;
-            Invalidate();
-        }
-
         string dragFile = null;
         private void FormMain_DragEnter(object sender, DragEventArgs e) {
             dragFile = GetDragDataOneFile(e.Data);
@@ -120,7 +108,12 @@ namespace ShimView {
         }
 
         private void pasteImageToolStripMenuItem_Click(object sender, EventArgs e) {
+            var imgOld = Clipboard.GetImage();
+            if (imgOld == null)
+                return;
 
+            img = imgOld;
+            Invalidate();
         }
 
         private void resetZoomToolStripMenuItem_Click(object sender, EventArgs e) {
