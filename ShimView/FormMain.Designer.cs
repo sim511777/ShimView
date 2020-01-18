@@ -27,6 +27,7 @@
             // 
             // FormMain
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
@@ -34,6 +35,8 @@
             this.DoubleBuffered = true;
             this.Name = "FormMain";
             this.Text = "Shim View";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.FormMain_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.FormMain_DragEnter);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormMain_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMain_MouseDown);

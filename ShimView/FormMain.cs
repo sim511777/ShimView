@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,35 @@ namespace ShimView {
                 Invalidate();
             }
             ptOld = ptNow;
+        }
+
+        private string GetDragDataOneFile(IDataObject dragData) {
+            if (dragData.GetDataPresent(DataFormats.FileDrop) == false)
+                return null;
+            var files = (string[])dragData.GetData(DataFormats.FileDrop);
+            if (files.Length != 1)
+                return null;
+            var file = files[0];
+            var fileAttr = File.GetAttributes(file);
+            if ((fileAttr | FileAttributes.Directory) == FileAttributes.Directory)
+                return null;
+            return file;
+        }
+
+        string dragFile = null;
+        private void FormMain_DragEnter(object sender, DragEventArgs e) {
+            dragFile = GetDragDataOneFile(e.Data);
+            if (dragFile != null)
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void FormMain_DragDrop(object sender, DragEventArgs e) {
+            try {
+                img = Image.FromFile(dragFile);
+                Invalidate();
+            } catch {}
         }
     }
 }
