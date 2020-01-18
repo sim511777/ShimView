@@ -13,6 +13,14 @@ namespace ShimView {
     public partial class FormMain : Form {
         public FormMain() {
             InitializeComponent();
+            MouseWheel += this.FormMain_MouseWheel;
+        }
+
+        int zoomLevel = 0;
+        private void FormMain_MouseWheel(object sender, MouseEventArgs e) {
+            var delta = (e.Delta > 0) ? 1 : -1;
+            zoomLevel += delta;
+            Invalidate();
         }
 
         Image img = null;
@@ -32,7 +40,9 @@ namespace ShimView {
             if (img == null)
                 return;
 
-            e.Graphics.DrawImage(img, ptPanninng);
+            var zoomFactor = (float)Math.Pow(2, zoomLevel);
+            var rect = new RectangleF(ptPanninng.X, ptPanninng.Y, img.Width * zoomFactor, img.Height * zoomFactor);
+            e.Graphics.DrawImage(img, rect);
         }
 
         bool mouseDown = false;
