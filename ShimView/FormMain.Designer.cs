@@ -41,7 +41,7 @@
             this.resetZoomToolStripMenuItem,
             this.useImageFilterToolStripMenuItem});
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(182, 114);
+            this.menu.Size = new System.Drawing.Size(201, 114);
             // 
             // openFileToolStripMenuItem
             // 
@@ -73,7 +73,8 @@
             this.useImageFilterToolStripMenuItem.CheckOnClick = true;
             this.useImageFilterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.useImageFilterToolStripMenuItem.Name = "useImageFilterToolStripMenuItem";
-            this.useImageFilterToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.useImageFilterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.useImageFilterToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.useImageFilterToolStripMenuItem.Text = "Use Image Filter";
             this.useImageFilterToolStripMenuItem.Click += new System.EventHandler(this.useImageFilterToolStripMenuItem_Click);
             // 

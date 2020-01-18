@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -44,9 +45,11 @@ namespace ShimView {
             if (img == null)
                 return;
 
+            Graphics g = e.Graphics;
+            g.InterpolationMode = this.useImageFilterToolStripMenuItem.Checked ? InterpolationMode.Default : InterpolationMode.NearestNeighbor;
             var zoomFactor = GetZoomFactor(zoomLevel);
             var rect = new RectangleF(ptPanninng.X, ptPanninng.Y, (float)(img.Width * zoomFactor), (float)(img.Height * zoomFactor));
-            e.Graphics.DrawImage(img, rect);
+            g.DrawImage(img, rect);
         }
 
         private void FormMain_MouseWheel(object sender, MouseEventArgs e) {
@@ -124,7 +127,7 @@ namespace ShimView {
         }
 
         private void useImageFilterToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            Invalidate();
         }
     }
 }
