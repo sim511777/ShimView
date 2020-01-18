@@ -93,9 +93,16 @@ namespace ShimView {
                 e.Effect = DragDropEffects.None;
         }
 
+        private void ChangeImage(Image imgNew) {
+            if (img != null)
+                img.Dispose();
+            img = imgNew;
+        }
+
         private void LoadImageFile(string file) {
             try {
-                img = Image.FromFile(file);
+                var imgNew = Image.FromFile(file);
+                ChangeImage(imgNew);
                 Invalidate();
             } catch {}
         }
@@ -111,11 +118,11 @@ namespace ShimView {
         }
 
         private void pasteImageToolStripMenuItem_Click(object sender, EventArgs e) {
-            var imgOld = Clipboard.GetImage();
-            if (imgOld == null)
+            var imgNew = Clipboard.GetImage();
+            if (imgNew == null)
                 return;
 
-            img = imgOld;
+            ChangeImage(imgNew);
             Invalidate();
         }
 
