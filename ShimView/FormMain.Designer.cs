@@ -33,6 +33,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "FormMain";
             this.Text = "Shim View";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.ResumeLayout(false);
 
         }

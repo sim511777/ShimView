@@ -13,5 +13,17 @@ namespace ShimView {
         public FormMain() {
             InitializeComponent();
         }
+
+        Image img = null;
+        private void FormMain_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Modifiers != Keys.Control | e.KeyCode != Keys.V)
+                return;
+
+            img = Clipboard.GetImage();
+            if (img == null)
+                return;
+
+            Invalidate();
+        }
     }
 }
