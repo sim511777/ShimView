@@ -16,10 +16,21 @@ namespace ShimView {
             MouseWheel += this.FormMain_MouseWheel;
         }
 
+        double GetZoomFactor(int level) {
+            return Math.Pow(Math.Sqrt(2), level);
+        }
+
         int zoomLevel = 0;
         private void FormMain_MouseWheel(object sender, MouseEventArgs e) {
+            var zoomFactorOld = GetZoomFactor(zoomLevel);
             var delta = (e.Delta > 0) ? 1 : -1;
             zoomLevel += delta;
+            var zoomFactorNew = GetZoomFactor(zoomLevel);
+            var zoomFactorDelta = zoomFactorNew / zoomFactorOld;
+            var ptX = (ptPanninng.X - e.Location.X) * zoomFactorDelta + e.Location.X;
+            var ptY = (ptPanninng.Y - e.Location.Y) * zoomFactorDelta + e.Location.Y;
+            ptPanninng.X = (int)ptX;
+            ptPanninng.Y = (int)ptY;
             Invalidate();
         }
 
@@ -40,8 +51,8 @@ namespace ShimView {
             if (img == null)
                 return;
 
-            var zoomFactor = (float)Math.Pow(2, zoomLevel);
-            var rect = new RectangleF(ptPanninng.X, ptPanninng.Y, img.Width * zoomFactor, img.Height * zoomFactor);
+            var zoomFactor = GetZoomFactor(zoomLevel);
+            var rect = new RectangleF(ptPanninng.X, ptPanninng.Y, (float)(img.Width * zoomFactor), (float)(img.Height * zoomFactor));
             e.Graphics.DrawImage(img, rect);
         }
 
