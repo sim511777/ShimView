@@ -31,6 +31,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.DoubleBuffered = true;
             this.Name = "FormMain";
             this.Text = "Shim View";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormMain_Paint);
