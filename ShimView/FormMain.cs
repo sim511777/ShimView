@@ -117,7 +117,10 @@ namespace ShimView {
         }
 
         private void resetZoomToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            zoomLevel = 0;
+            ptPanninng.X = 0;
+            ptPanninng.Y = 0;
+            Invalidate();
         }
 
         private void useImageFilterToolStripMenuItem_Click(object sender, EventArgs e) {
