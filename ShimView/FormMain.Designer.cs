@@ -29,9 +29,10 @@
             this.pasteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetZoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useImageFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
+            this.lennaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,12 +41,13 @@
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openFileToolStripMenuItem,
             this.pasteImageToolStripMenuItem,
+            this.lennaToolStripMenuItem,
             this.resetZoomToolStripMenuItem,
             this.useImageFilterToolStripMenuItem,
             this.toolStripSeparator1,
             this.aboutToolStripMenuItem});
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(201, 142);
+            this.menu.Size = new System.Drawing.Size(201, 164);
             // 
             // openFileToolStripMenuItem
             // 
@@ -82,10 +84,6 @@
             this.useImageFilterToolStripMenuItem.Text = "Use Image Filter";
             this.useImageFilterToolStripMenuItem.Click += new System.EventHandler(this.useImageFilterToolStripMenuItem_Click);
             // 
-            // dlgOpen
-            // 
-            this.dlgOpen.FileName = "openFileDialog1";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -97,6 +95,18 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // dlgOpen
+            // 
+            this.dlgOpen.FileName = "openFileDialog1";
+            // 
+            // lennaToolStripMenuItem
+            // 
+            this.lennaToolStripMenuItem.Name = "lennaToolStripMenuItem";
+            this.lennaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.lennaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.lennaToolStripMenuItem.Text = "Lenna";
+            this.lennaToolStripMenuItem.Click += new System.EventHandler(this.lennaToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -130,6 +140,7 @@
         private System.Windows.Forms.OpenFileDialog dlgOpen;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lennaToolStripMenuItem;
     }
 }
 

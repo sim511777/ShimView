@@ -47,8 +47,8 @@ namespace ShimView {
 
             Graphics g = e.Graphics;
             g.InterpolationMode = this.useImageFilterToolStripMenuItem.Checked ? InterpolationMode.Default : InterpolationMode.NearestNeighbor;
-            var zoomFactor = GetZoomFactor(zoomLevel);
-            var rect = new RectangleF(ptPanninng.X, ptPanninng.Y, (float)(img.Width * zoomFactor), (float)(img.Height * zoomFactor));
+            var zoomFactor = (float)GetZoomFactor(zoomLevel);
+            var rect = new RectangleF(ptPanninng.X, ptPanninng.Y, img.Width * zoomFactor, img.Height * zoomFactor);
             g.DrawImage(img, rect);
         }
 
@@ -139,6 +139,11 @@ namespace ShimView {
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             MessageBox.Show(this, Program.AboutInfo, Program.Name);
+        }
+
+        private void lennaToolStripMenuItem_Click(object sender, EventArgs e) {
+            ChangeImage(Properties.Resources.Lenna);
+            Invalidate();
         }
     }
 }
