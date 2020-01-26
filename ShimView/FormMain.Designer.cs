@@ -29,10 +29,12 @@
             this.pasteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetZoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useImageFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.lennaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
-            this.lennaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,13 +43,15 @@
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openFileToolStripMenuItem,
             this.pasteImageToolStripMenuItem,
-            this.lennaToolStripMenuItem,
             this.resetZoomToolStripMenuItem,
             this.useImageFilterToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.lennaToolStripMenuItem,
+            this.chessToolStripMenuItem,
             this.toolStripSeparator1,
             this.aboutToolStripMenuItem});
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(201, 164);
+            this.menu.Size = new System.Drawing.Size(201, 170);
             // 
             // openFileToolStripMenuItem
             // 
@@ -75,14 +79,33 @@
             // 
             // useImageFilterToolStripMenuItem
             // 
-            this.useImageFilterToolStripMenuItem.Checked = true;
             this.useImageFilterToolStripMenuItem.CheckOnClick = true;
-            this.useImageFilterToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.useImageFilterToolStripMenuItem.Name = "useImageFilterToolStripMenuItem";
             this.useImageFilterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.useImageFilterToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.useImageFilterToolStripMenuItem.Text = "Use Image Filter";
             this.useImageFilterToolStripMenuItem.Click += new System.EventHandler(this.useImageFilterToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(197, 6);
+            // 
+            // lennaToolStripMenuItem
+            // 
+            this.lennaToolStripMenuItem.Name = "lennaToolStripMenuItem";
+            this.lennaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.lennaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.lennaToolStripMenuItem.Text = "Lenna";
+            this.lennaToolStripMenuItem.Click += new System.EventHandler(this.lennaToolStripMenuItem_Click);
+            // 
+            // chessToolStripMenuItem
+            // 
+            this.chessToolStripMenuItem.Name = "chessToolStripMenuItem";
+            this.chessToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.chessToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.chessToolStripMenuItem.Text = "Chess";
+            this.chessToolStripMenuItem.Click += new System.EventHandler(this.chessToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -99,14 +122,6 @@
             // dlgOpen
             // 
             this.dlgOpen.FileName = "openFileDialog1";
-            // 
-            // lennaToolStripMenuItem
-            // 
-            this.lennaToolStripMenuItem.Name = "lennaToolStripMenuItem";
-            this.lennaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.lennaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.lennaToolStripMenuItem.Text = "Lenna";
-            this.lennaToolStripMenuItem.Click += new System.EventHandler(this.lennaToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -141,6 +156,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lennaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem chessToolStripMenuItem;
     }
 }
 
