@@ -46,11 +46,15 @@ namespace ShimView {
                 return;
 
             Graphics g = e.Graphics;
-            g.PixelOffsetMode = PixelOffsetMode.Half;
-            g.InterpolationMode = this.useImageFilterToolStripMenuItem.Checked ? InterpolationMode.HighQualityBicubic : InterpolationMode.NearestNeighbor;
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            g.InterpolationMode = this.useImageFilterToolStripMenuItem.Checked ? InterpolationMode.Bilinear : InterpolationMode.NearestNeighbor;
             var zoomFactor = (float)GetZoomFactor(zoomLevel);
-            var rect = new RectangleF(ptPanninng.X, ptPanninng.Y, img.Width * zoomFactor, img.Height * zoomFactor);
-            g.DrawImage(img, rect);
+            g.ScaleTransform(zoomFactor, zoomFactor, MatrixOrder.Append);
+            g.TranslateTransform(ptPanninng.X, ptPanninng.Y, MatrixOrder.Append);
+            g.DrawImage(img, 0, 0);
+            var pen = new Pen(Color.Lime, 1f / zoomFactor);
+            g.DrawLine(pen, 0.5f, 0.5f, 1.5f, 1.5f);
+            pen.Dispose();
         }
 
         private void FormMain_MouseWheel(object sender, MouseEventArgs e) {
