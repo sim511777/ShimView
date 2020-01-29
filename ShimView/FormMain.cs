@@ -18,14 +18,14 @@ namespace ShimView {
         }
 
         Image img = null;
-        Point ptPanninng = Point.Empty;
+        PointF ptPanning = PointF.Empty;
         int zoomLevel = 0;
 
         bool mouseDown = false;
         Point ptOld = Point.Empty;
 
-        static double GetZoomFactor(int level) {
-            return Math.Pow(Math.Sqrt(2), level);
+        static float GetZoomFactor(int level) {
+            return (float)Math.Pow(Math.Sqrt(2), level);
         }
 
         private static string GetDragDataOneFile(IDataObject dragData) {
@@ -48,9 +48,9 @@ namespace ShimView {
             Graphics g = e.Graphics;
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
             g.InterpolationMode = this.useImageFilterToolStripMenuItem.Checked ? InterpolationMode.Bilinear : InterpolationMode.NearestNeighbor;
-            var zoomFactor = (float)GetZoomFactor(zoomLevel);
+            var zoomFactor = GetZoomFactor(zoomLevel);
             g.ScaleTransform(zoomFactor, zoomFactor, MatrixOrder.Append);
-            g.TranslateTransform(ptPanninng.X, ptPanninng.Y, MatrixOrder.Append);
+            g.TranslateTransform(ptPanning.X, ptPanning.Y, MatrixOrder.Append);
             g.DrawImage(img, 0, 0);
             var pen = new Pen(Color.Lime, 1f / zoomFactor);
             g.DrawLine(pen, 0.5f, 0.5f, 1.5f, 1.5f);
@@ -63,10 +63,10 @@ namespace ShimView {
             zoomLevel += delta;
             var zoomFactorNew = GetZoomFactor(zoomLevel);
             var zoomFactorDelta = zoomFactorNew / zoomFactorOld;
-            var ptX = (ptPanninng.X - e.Location.X) * zoomFactorDelta + e.Location.X;
-            var ptY = (ptPanninng.Y - e.Location.Y) * zoomFactorDelta + e.Location.Y;
-            ptPanninng.X = (int)ptX;
-            ptPanninng.Y = (int)ptY;
+            var ptX = (ptPanning.X - e.Location.X) * zoomFactorDelta + e.Location.X;
+            var ptY = (ptPanning.Y - e.Location.Y) * zoomFactorDelta + e.Location.Y;
+            ptPanning.X = ptX;
+            ptPanning.Y = ptY;
             Invalidate();
         }
 
@@ -83,7 +83,7 @@ namespace ShimView {
         private void FormMain_MouseMove(object sender, MouseEventArgs e) {
             var ptNow = e.Location;
             if (mouseDown) {
-                ptPanninng += ((Size)ptNow - (Size)ptOld);
+                ptPanning += ((Size)ptNow - (Size)ptOld);
                 Invalidate();
             }
             ptOld = ptNow;
@@ -133,8 +133,8 @@ namespace ShimView {
 
         private void resetZoomToolStripMenuItem_Click(object sender, EventArgs e) {
             zoomLevel = 0;
-            ptPanninng.X = 0;
-            ptPanninng.Y = 0;
+            ptPanning.X = 0;
+            ptPanning.Y = 0;
             Invalidate();
         }
 
